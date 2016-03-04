@@ -1,6 +1,7 @@
 defmodule Words do
   import String, only: [downcase: 1, replace: 3, split: 1]
   import Enum, only: [reduce: 3]
+  import Map, only: [update: 4]
 
   @doc """
   Count the number of words in the sentence.
@@ -31,11 +32,8 @@ defmodule Words do
   end
 
   defp count_words(words) do
-    words
-    |> reduce(%{}, &(Map.put(&2, &1, increment_count(&1, &2))))
-  end
-
-  defp increment_count(word, counts) do
-    Map.get(counts, word, 0) + 1
+    reduce words, %{}, fn(word, counts) ->
+      update(counts, word, 1, &(&1 + 1))
+    end
   end
 end
