@@ -1,6 +1,7 @@
 defmodule Words do
   import String, only: [downcase: 1, replace: 3, split: 1]
   import Enum, only: [reduce: 3]
+
   @doc """
   Count the number of words in the sentence.
 
