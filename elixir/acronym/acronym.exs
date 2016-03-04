@@ -6,6 +6,7 @@ defmodule Acronym do
   @spec abbreviate(String.t) :: String.t()
   def abbreviate(long_name) do
     long_name
+    |> String.upcase
     |> String.split
     |> Enum.map(&(String.first(&1)))
     |> Enum.join
