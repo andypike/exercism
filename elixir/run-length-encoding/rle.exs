@@ -1,5 +1,23 @@
 defmodule Occurrence do
   defstruct char: nil, count: 1
+
+  def last(occurrences) do
+    List.last(occurrences) || %Occurrence{}
+  end
+
+  def add_first(occurrences, char) do
+    occurrences ++ [ %Occurrence{ char: char } ]
+  end
+
+  def increment_last(occurrences, char) do
+    List.update_at occurrences, -1, fn(last_occurrence) ->
+      %{ last_occurrence | count: last_occurrence.count + 1 }
+    end
+  end
+
+  def output(occurrence) do
+    Integer.to_string(occurrence.count) <> occurrence.char
+  end
 end
 
 defmodule RunLengthEncoder do
@@ -24,35 +42,17 @@ defmodule RunLengthEncoder do
 
   defp count_consecutive_characters(characters) do
     Enum.reduce characters, [], fn(char, occurrences) ->
-      case last_occurrence(occurrences).char do
-        ^char -> increment_last_occurrence(occurrences, char)
-        _     -> add_first_occurrence(occurrences, char)
+      case Occurrence.last(occurrences).char do
+        ^char -> Occurrence.increment_last(occurrences, char)
+        _     -> Occurrence.add_first(occurrences, char)
       end
-    end
-  end
-
-  defp last_occurrence(occurrences) do
-    List.last(occurrences) || %Occurrence{}
-  end
-
-  defp add_first_occurrence(occurrences, char) do
-    occurrences ++ [ %Occurrence{ char: char } ]
-  end
-
-  defp increment_last_occurrence(occurrences, char) do
-    List.update_at occurrences, -1, fn(last_occurrence) ->
-      %{ last_occurrence | count: last_occurrence.count + 1 }
     end
   end
 
   defp format_output(occurrences) do
     Enum.reduce occurrences, "", fn(occurrence, output) ->
-      output <> occurrence_output(occurrence)
+      output <> Occurrence.output(occurrence)
     end
-  end
-
-  defp occurrence_output(occurrence) do
-    Integer.to_string(occurrence.count) <> occurrence.char
   end
 
   @spec decode(String.t) :: String.t
