@@ -7,9 +7,11 @@ defmodule Acronym do
   def abbreviate(long_name) do
     long_name
     |> String.split
-    |> Enum.map(&capitalize/1)
-    |> Enum.map(&remove_lowercase_and_punctuation/1)
-    |> Enum.join
+    |> Enum.map_join(&abbreviate_word/1)
+  end
+
+  defp abbreviate_word(word) do
+    word |> capitalize |> remove_lowercase_and_punctuation
   end
 
   defp capitalize(word) do
