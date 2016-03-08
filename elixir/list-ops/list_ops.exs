@@ -7,8 +7,9 @@ defmodule ListOps do
   # automatically imported) and so shouldn't be used either.
 
   @spec count(list) :: non_neg_integer
-  def count(l) do
-
+  def count([]), do: 0
+  def count([head | tail]) do
+    1 + count(tail)
   end
 
   @spec reverse(list) :: list
