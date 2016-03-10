@@ -40,8 +40,11 @@ defmodule ListOps do
   end
 
   @spec append(list, list) :: list
-  def append(a, b) do
-
+  def append([], []), do: []
+  def append([], b), do: b
+  def append(a, []), do: a
+  def append([head | tail], b) do
+    [head | append(tail, b)]
   end
 
   @spec concat([[any]]) :: [any]
