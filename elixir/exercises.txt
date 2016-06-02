@@ -1,56 +1,53 @@
-Elixir Exercises
-================
-
-Hello World
-Bob
-Word Count
-Acronym
-Run Length Encoding
-List Ops
-Sublist
-Anagram
-Bracket Push
-Nucleotide Count
-Rna Transcription
-Accumulate
-Hamming
-Phone Number
-Grade School
-Leap
-Etl
-Meetup
-Space Age
-Grains
-Change
-Luhn
-Gigasecond
-Queen Attack
-Saddle Points
-Triangle
-Hexadecimal
-Scrabble Score
-Crypto Square
-Diamond
-Roman Numerals
-Binary
-Binary Search
-Prime Factors
-Sieve
-Raindrops
-Allergies
-Atbash Cipher
-Bank Account
-Sum Of Multiples
-Largest Series Product
-Pythagorean Triplet
-Palindrome Products
-Parallel Letter Frequency
-Rail Fence Cipher
-Zipper
-Minesweeper
-Connect
-Difference Of Squares
-Dot Dsl
-Custom Set
-Nth Prime
-Forth
+hello-world
+bob
+word-count
+acronym
+run-length-encoding
+list-ops
+sublist
+anagram
+bracket-push
+nucleotide-count
+rna-transcription
+accumulate
+hamming
+phone-number
+grade-school
+leap
+etl
+meetup
+space-age
+grains
+change
+luhn
+gigasecond
+queen-attack
+saddle-points
+triangle
+hexadecimal
+scrabble-score
+crypto-square
+diamond
+roman-numerals
+binary
+binary-search
+prime-factors
+sieve
+raindrops
+allergies
+atbash-cipher
+bank-account
+sum-of-multiples
+largest-series-product
+pythagorean-triplet
+palindrome-products
+parallel-letter-frequency
+rail-fence-cipher
+zipper
+minesweeper
+connect
+difference-of-squares
+dot-dsl
+custom-set
+nth-prime
+forth
