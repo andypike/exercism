@@ -1,0 +1,56 @@
+Elixir Exercises
+================
+
+Hello World
+Bob
+Word Count
+Acronym
+Run Length Encoding
+List Ops
+Sublist
+Anagram
+Bracket Push
+Nucleotide Count
+Rna Transcription
+Accumulate
+Hamming
+Phone Number
+Grade School
+Leap
+Etl
+Meetup
+Space Age
+Grains
+Change
+Luhn
+Gigasecond
+Queen Attack
+Saddle Points
+Triangle
+Hexadecimal
+Scrabble Score
+Crypto Square
+Diamond
+Roman Numerals
+Binary
+Binary Search
+Prime Factors
+Sieve
+Raindrops
+Allergies
+Atbash Cipher
+Bank Account
+Sum Of Multiples
+Largest Series Product
+Pythagorean Triplet
+Palindrome Products
+Parallel Letter Frequency
+Rail Fence Cipher
+Zipper
+Minesweeper
+Connect
+Difference Of Squares
+Dot Dsl
+Custom Set
+Nth Prime
+Forth
