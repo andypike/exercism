@@ -1,9 +1,9 @@
-hello-world
-bob
-word-count
-acronym
-run-length-encoding
-list-ops
+hello-world - DONE
+bob - DONE
+word-count - DONE
+acronym - DONE
+run-length-encoding - DONE
+list-ops - DONE
 sublist
 anagram
 bracket-push
