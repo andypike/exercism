@@ -10,12 +10,11 @@ defmodule Sublist do
   def compare(a, b) do
     cond do
       sublist?(a, b)   -> :sublist
-      superlist?(a, b) -> :superlist
+      sublist?(b, a) -> :superlist
       true             -> :unequal
     end
   end
 
-  defp sublist?([], b), do: true
   defp sublist?(a, b) when length(a) > length(b), do: false
   defp sublist?(a, [h|t]) do
     start = Enum.take([h|t], length(a))
@@ -24,9 +23,5 @@ defmodule Sublist do
       a === start -> true
       true        -> sublist?(a, t)
     end
-  end
-
-  defp superlist?(a, b) do
-    sublist?(b, a)
   end
 end
