@@ -6,21 +6,27 @@ defmodule Sublist do
   def compare([], [_|_]), do: :sublist
   def compare([_|_], []), do: :superlist
   def compare([], []), do: :equal
+  def compare(a, b) when a === b, do: :equal
   def compare(a, b) do
     cond do
-      a == b         -> :equal
-      sublist?(a, b) -> :sublist
-      true           -> :unequal
+      sublist?(a, b)   -> :sublist
+      superlist?(a, b) -> :superlist
+      true             -> :unequal
     end
   end
 
   defp sublist?([], b), do: true
-  defp sublist?([h|t], b) do
-    exists = Enum.any?(b, fn(e) -> h == e end)
+  defp sublist?(a, b) when length(a) > length(b), do: false
+  defp sublist?(a, [h|t]) do
+    start = Enum.take([h|t], length(a))
 
     cond do
-      exists -> sublist?(t, b)
-      true   -> false
+      a === start -> true
+      true        -> sublist?(a, t)
     end
+  end
+
+  defp superlist?(a, b) do
+    sublist?(b, a)
   end
 end
