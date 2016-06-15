@@ -9,9 +9,9 @@ defmodule Sublist do
   def compare(a, b) when a === b, do: :equal
   def compare(a, b) do
     cond do
-      sublist?(a, b)   -> :sublist
+      sublist?(a, b) -> :sublist
       sublist?(b, a) -> :superlist
-      true             -> :unequal
+      true           -> :unequal
     end
   end
 
